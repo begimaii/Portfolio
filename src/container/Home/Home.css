@@ -1,0 +1,5 @@
+.app-socialIcons {
+  display: flex;
+  flex-direction: column;
+  color: #8b72be;
+}
