@@ -3,13 +3,18 @@ import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 import MenuIcon from "@mui/icons-material/Menu";
+import { useDispatch, useSelector } from "react-redux";
+import { toggleThemeMode, toggleMenu } from "../store/navBarReducer";
+
 import images from "./constants/images";
 
 import "./Navbar.css";
-import { fontSize } from "@mui/system";
 
 const Navbar = () => {
-  const [toggleMenu, setToggleMenu] = useState(false);
+  const dispatch = useDispatch();
+
+  const darkmode = useSelector((state) => state.navbar.darkMode);
+  const smallMenu = useSelector((state) => state.navbar.smallScreenMenu);
   return (
     <nav className="app-navbar">
       {/* <div className="logo-container">
@@ -17,52 +22,45 @@ const Navbar = () => {
       </div> */}
 
       <ul className="app-navbar-links">
-        <li className="p__opensans">
-          <a href="#home">Home</a>
-        </li>
-        <li className="p__opensans">
-          <a href="#about">About</a>
-        </li>
-        <li className="p__opensans">
-          <a href="#menu">Skills</a>
-        </li>
-        <li className="p__opensans">
-          <a href="#award">Projects</a>
-        </li>
-        <li className="p__opensans">
-          <a href="#contact">Contact me</a>
-        </li>
+        {["Home", "About", "Skills", "Projects", "Contact"].map((item) => (
+          <li key={`link - ${item}`}>
+            <a href={`#${item}`}>{item}</a>
+          </li>
+        ))}
       </ul>
-      <DarkModeOutlinedIcon style={{ color: "white" }} />
-      <LightModeOutlinedIcon style={{ color: "white" }} />
+
+      {darkmode ? (
+        <DarkModeOutlinedIcon
+          style={{ color: "white" }}
+          onClick={() => dispatch(toggleThemeMode(true))}
+        />
+      ) : (
+        <LightModeOutlinedIcon
+          style={{ color: "white" }}
+          onClick={() => dispatch(toggleThemeMode(false))}
+        />
+      )}
+
       <div className="app-navbar-smallScreen">
         <MenuIcon
-          onClick={() => setToggleMenu(true)}
-          style={{ color: "whitesmoke", fontSize: 27 }}
+          onClick={() => dispatch(toggleMenu(true))}
+          style={{ color: "whitesmoke", fontSize: 27, cursor: "pointer" }}
         />
-        {toggleMenu && (
+        {smallMenu && (
           <div className="app-navbar-smallScreen-overlay">
             <HighlightOffIcon
               // style={{ color: "whitesmoke", fontSize: 27 }}
               className="overlay-close"
-              onClick={() => setToggleMenu(false)}
+              onClick={() => dispatch(toggleMenu(false))}
             />
             <ul className="app-navbar-links-smallScreen">
-              <li className="p__opensans">
-                <a href="#home">Home</a>
-              </li>
-              <li className="p__opensans">
-                <a href="#about">About</a>
-              </li>
-              <li className="p__opensans">
-                <a href="#menu">Skills</a>
-              </li>
-              <li className="p__opensans">
-                <a href="#award">Projects</a>
-              </li>
-              <li className="p__opensans">
-                <a href="#contact">Contact me</a>
-              </li>
+              {["Home", "About", "Skills", "Projects", "Contact"].map(
+                (item) => (
+                  <li key={`link - ${item}`} href={`#${item}`}>
+                    {item}
+                  </li>
+                )
+              )}
             </ul>
           </div>
         )}
