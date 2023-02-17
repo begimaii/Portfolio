@@ -22,7 +22,7 @@ const Navbar = () => {
       </div> */}
 
       <ul className="app-navbar-links">
-        {["Home", "About", "Skills", "Projects", "Contact"].map((item) => (
+        {["Home", "about", "skills", "projects", "contact"].map((item) => (
           <li key={`link - ${item}`}>
             <a href={`#${item}`}>{item}</a>
           </li>
@@ -54,7 +54,7 @@ const Navbar = () => {
               onClick={() => dispatch(toggleMenu(false))}
             />
             <ul className="app-navbar-links-smallScreen">
-              {["Home", "About", "Skills", "Projects", "Contact"].map(
+              {["home", "about", "skills", "projects", "contact"].map(
                 (item) => (
                   <li key={`link - ${item}`} href={`#${item}`}>
                     {item}

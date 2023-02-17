@@ -23,7 +23,6 @@
   text-transform: uppercase;
 }
 .app-navbar-links li a {
-  text-decoration: none;
   color: whitesmoke;
   transition: all 0.3s ease-in-out;
 }

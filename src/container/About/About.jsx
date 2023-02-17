@@ -3,7 +3,7 @@ import React from "react";
 import images from "../../components/constants/images";
 const About = () => {
   return (
-    <section className="section-padding ">
+    <section className="section-padding " id="about">
       <h1>About Me</h1>
       <div>{/* <img src={images.logo} alt="aboutme" /> */}</div>
       <div>
