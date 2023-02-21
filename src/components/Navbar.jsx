@@ -8,7 +8,7 @@ import { toggleThemeMode, toggleMenu } from "../store/navBarReducer";
 
 import images from "./constants/images";
 
-import "./Navbar.css";
+import "./Navbar.scss";
 
 const Navbar = () => {
   const dispatch = useDispatch();
@@ -16,10 +16,11 @@ const Navbar = () => {
   const darkmode = useSelector((state) => state.navbar.darkMode);
   const smallMenu = useSelector((state) => state.navbar.smallScreenMenu);
   return (
-    <nav className="app-navbar">
+    <nav className={darkmode ? "app-navbar-dark" : "app-navbar"}>
       {/* <div className="logo-container">
-        <img src={images.logo} alt="logo" className="app-navbar-logo" />
+        <img src={images.header} alt="logo" className="app-navbar-logo" />
       </div> */}
+      <h1>Begimai</h1>
 
       <ul className="app-navbar-links">
         {["Home", "about", "skills", "projects", "contact"].map((item) => (
@@ -30,24 +31,42 @@ const Navbar = () => {
       </ul>
 
       {darkmode ? (
-        <DarkModeOutlinedIcon
-          style={{ color: "white" }}
-          onClick={() => dispatch(toggleThemeMode(true))}
+        <LightModeOutlinedIcon
+          className="light-mode-icon"
+          onClick={() => dispatch(toggleThemeMode(false))}
         />
       ) : (
-        <LightModeOutlinedIcon
-          style={{ color: "white" }}
-          onClick={() => dispatch(toggleThemeMode(false))}
+        <DarkModeOutlinedIcon
+          className="dark-mode-icon"
+          onClick={() => dispatch(toggleThemeMode(true))}
         />
       )}
 
       <div className="app-navbar-smallScreen">
         <MenuIcon
           onClick={() => dispatch(toggleMenu(true))}
-          style={{ color: "whitesmoke", fontSize: 27, cursor: "pointer" }}
+          style={{ color: "black", fontSize: 27, cursor: "pointer" }}
         />
         {smallMenu && (
-          <div className="app-navbar-smallScreen-overlay">
+          <div className="app-navbar-smallScreen-overlay ">
+            <ul className="app-navbar-links-smallScreen">
+              {["home", "about", "skills", "projects", "contact"].map(
+                (item) => (
+                  <li key={`link - ${item}`}>
+                    <a href={`#${item}`}>{item}</a>
+                  </li>
+                )
+              )}
+            </ul>
+            <ul className="app-navbar-links">
+              {["Home", "about", "skills", "projects", "contact"].map(
+                (item) => (
+                  <li key={`link - ${item}`}>
+                    <a href={`#${item}`}>{item}</a>
+                  </li>
+                )
+              )}
+            </ul>
             <HighlightOffIcon
               // style={{ color: "whitesmoke", fontSize: 27 }}
               className="overlay-close"
@@ -56,12 +75,14 @@ const Navbar = () => {
             <ul className="app-navbar-links-smallScreen">
               {["home", "about", "skills", "projects", "contact"].map(
                 (item) => (
-                  <li key={`link - ${item}`} href={`#${item}`}>
-                    {item}
+                  <li key={`link - ${item}`}>
+                    <a href={`#${item}`}>{item}</a>
                   </li>
                 )
               )}
             </ul>
+
+            <h1>links</h1>
           </div>
         )}
       </div>
