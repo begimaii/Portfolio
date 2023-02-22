@@ -14,3 +14,12 @@
 
   min-height: 100vh;
 }
+.app-dark-background {
+  display: flex;
+  flex-direction: row;
+  background: #1a1d24;
+  background-position: center;
+  background-size: cover;
+  background-repeat: repeat;
+  background-attachment: fixed;
+}

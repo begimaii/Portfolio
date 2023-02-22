@@ -21,11 +21,18 @@
 .app-darkmode {
   display: flex;
   flex-direction: row;
-  background: #1a1d24;
-  background-position: center;
-  background-size: cover;
-  background-repeat: repeat;
-  background-attachment: fixed;
+  // background: url("./assets/bg1.jpg");
+  // background-position: center;
+  // background-size: cover;
+  // background-repeat: repeat;
+  // background-attachment: fixed;
+
+  h1 {
+    color: white;
+  }
+  h2 {
+    color: white;
+  }
   .app-homepage-socialIcons {
     display: flex;
     align-items: center;

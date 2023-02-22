@@ -16,7 +16,7 @@ const Home = () => {
     <section
       className={
         darkmode
-          ? "app-darkmode section-padding app-wrapper"
+          ? "app-darkmode app-dark-background section-padding app-wrapper"
           : "app-lightmode section-padding app-wrapper"
       }
     >
