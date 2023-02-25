@@ -33,10 +33,36 @@
   h2 {
     color: white;
   }
-  .app-homepage-socialIcons {
+  .app-homepage-socialIcons-container {
     display: flex;
-    align-items: center;
-    flex-direction: column;
-    color: rgb(230, 171, 24);
+    justify-content: space-between;
+
+    h3 {
+      // display: inline-block;
+      // vertical-align: middle;
+      // letter-spacing: 5px;
+      // padding: 0 -5px;
+
+      transform: rotate(-90deg);
+      -webkit-transform: rotate(-90deg);
+      -moz-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+      -o-transform: rotate(-90deg);
+      color: goldenrod;
+      height: 200px;
+    }
+    .socialIcons {
+      // display: inline-block;
+      // vertical-align: middle;
+      margin: 20px 0;
+      display: flex;
+      // align-items: center;
+      // flex-direction: column;
+      color: goldenrod;
+    }
+  }
+
+  .app-homepage-socialIcons:hover {
+    color: goldenrod;
   }
 }
