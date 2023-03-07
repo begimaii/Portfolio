@@ -1,0 +1,12 @@
+.app-projects {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  .app-projects-card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0;
+  }
+}

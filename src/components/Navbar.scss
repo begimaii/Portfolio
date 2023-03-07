@@ -30,12 +30,27 @@
     text-transform: uppercase;
   }
   a {
+    position: relative;
     color: rgb(14, 14, 14);
     font-weight: bold;
     transition: all 0.3s ease-in-out;
+    padding: 0 10px;
   }
   a:hover {
     color: #d89fdc;
+  }
+  a:after {
+    content: "";
+    position: absolute;
+    background-color: rgb(14, 14, 14);
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -10px;
+    transition: 0.3s;
+  }
+  a:hover:after {
+    width: 100%;
   }
   .darkmode-icon {
     color: rgb(14, 14, 14);
@@ -50,6 +65,7 @@
 .app-navbar-dark {
   width: 100%;
   display: flex;
+  
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem 2rem;
@@ -80,12 +96,27 @@
     text-transform: uppercase;
   }
   a {
+    position: relative;
     color: rgb(230, 171, 24);
     font-weight: bold;
     transition: all 0.3s ease-in-out;
+    padding: 0 10px;
+  }
+  a:after {
+    content: "";
+    position: absolute;
+    background-color: rgb(230, 171, 24);
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -10px;
+    transition: 0.3s;
   }
   a:hover {
     color: white;
+  }
+  a:hover:after {
+    width: 100%;
   }
   .lightmode-icon {
     color: goldenrod;
@@ -111,7 +142,6 @@
     flex-direction: column;
     z-index: 5;
   }
-
   .app-navbar-links-smallScreen {
     list-style: none;
     display: block;

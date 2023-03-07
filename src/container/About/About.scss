@@ -1,8 +1,37 @@
 section {
   display: flex;
   justify-content: space-between;
-
   h1 {
     font-family: var(--font-base);
+  }
+  h3 {
+    width: 50%;
+    margin: 30px;
+  }
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.app-homepage-darkmode {
+  display: flex;
+  justify-content: space-between;
+  background: #1a1d24;
+  background-position: center;
+  background-size: cover;
+  background-repeat: repeat;
+  background-attachment: fixed;
+}
+
+@media screen and (max-width: 480px) {
+  section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .app-homepage-darkmode {
+    display: flex;
+    flex-direction: column;
   }
 }
