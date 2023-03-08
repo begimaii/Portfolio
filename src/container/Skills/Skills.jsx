@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import images from "../../components/constants/images";
-import "./Skills.css";
+import "./Skills.scss";
 
 const Skills = () => {
   const darkmode = useSelector((state) => state.navbar.darkMode);

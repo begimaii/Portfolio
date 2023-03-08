@@ -16,8 +16,10 @@
 }
 .app-dark-background {
   display: flex;
-  flex-direction: row;
-  background: #1a1d24;
+  justify-content: space-between;
+  height: 100%;
+  overflow: hidden;
+  background: radial-gradient(ellipse at bottom, #283e5b 0%, #090a0f 100%);
   background-position: center;
   background-size: cover;
   background-repeat: repeat;

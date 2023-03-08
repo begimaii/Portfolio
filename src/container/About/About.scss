@@ -14,15 +14,7 @@ section {
   }
 }
 
-.app-homepage-darkmode {
-  display: flex;
-  justify-content: space-between;
-  background: #1a1d24;
-  background-position: center;
-  background-size: cover;
-  background-repeat: repeat;
-  background-attachment: fixed;
-}
+// background: transparent;
 
 @media screen and (max-width: 480px) {
   section {

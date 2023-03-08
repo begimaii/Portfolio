@@ -21,6 +21,12 @@ const Home = () => {
           : "app-lightmode section-padding app-wrapper"
       }
     >
+      <div className="app-home-stars">
+        <div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
+      </div>
+
       <div className="app-homepage-socialIcons-container">
         <div className="app-homepage-socialIcons">
           <IconButton className="socialIcons">
@@ -60,9 +66,6 @@ const Home = () => {
           alt="logo"
         />
       </div>
-      <div id="stars"></div>
-      <div id="stars2"></div>
-      <div id="stars3"></div>
     </section>
   );
 };
